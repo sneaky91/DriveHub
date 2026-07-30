@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* 1. THE BACKGROUND IMAGE FIX */
+.hero-section {
+    /* Put your actual car image file path here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/Bently.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
+}
+
+/* Header & Navigation layout */
+.hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-header nav a {
+    margin: 0 15px;
+    font-weight: normal;
+    transition: opacity 0.3s;
+}
+
+.hero-header nav a:hover {
+    opacity: 0.7;
+}
+
+/* Header search button styling */
+.Hero-search button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.Hero-search img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Makes a dark icon white */
+}
+
+/* Hero text content centering */
+.hero-content {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 0 8%;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Call to action buttons styling */
+.btn-veh {
+    display: inline-block;
+    background-color: #007bff;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-right: 15px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-veh:hover {
+    background-color: #0056b3;
+}
+
+.btn-search {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 11px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-search:hover {
+    background-color: white;
+    color: black;
+}
+
+/* 2. VEHICLE CATEGORIES SLIDER */
+.categories {
+    padding: 80px 0 80px 8%;
+    background: #fff;
+    color: #111;
+    overflow: hidden;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 8%;
+    margin-bottom: 45px;
+}
+
+.categories-label {
+    display: inline-block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.categories-label::before {
+    content: "\2022";
+    color: #007bff;
+    margin-right: 8px;
+}
+
+.categories-heading h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.categories-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.cat-arrow {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: #111;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.cat-arrow:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.cat-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    background: #fff;
+    color: #111;
+    border-color: #ddd;
+}
+
+.categories-viewport {
+    overflow: hidden;
+}
+
+.categories-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s ease;
+}
+
+.cat-card {
+    position: relative;
+    flex: 0 0 calc((100% - 8% - 48px) / 3);
+    height: 560px;
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.cat-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cat-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 45%);
+}
+
+.cat-card:hover img {
+    transform: scale(1.05);
+}
+
+.cat-name {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    z-index: 1;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+.features-header {
+    align-items: center;
+    text-align: center;
+    font-family: Rubik, sans-serif;
+}
+
+.features-veh {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.features-card {
+    height: 350px;
+    width: auto;
+    border-radius: 16px;
+    border: 1px solid black;
+    margin: 15px;
+
+}
+
+.features-card img {
+    height: 350px;
+    width: auto;
+    border-radius: 16px;
+}
+
+.features-card h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+.Services{
+    margin-left: 25px;
+    margin-top: 150px;
+    display: flex;
+}
+
+.Services-viewport{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.Services-Trade-in{
+    margin-right: 50px;
+}
+.Services-Trade-in h1{
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.Services-Financing{
+    margin-left: 150px;
+}
+
+.Services-Financing h1{
+    margin-bottom: 15px;
+    font-size: 32px;
+}
